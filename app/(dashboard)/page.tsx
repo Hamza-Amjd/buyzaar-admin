@@ -27,7 +27,7 @@ export default async function Home() {
             <CircleDollarSign className="max-sm:hidden" />
           </CardHeader>
           <CardContent>
-            <p className="text-body-bold">$ {totalRevenue}</p>
+            <p className="text-body-bold">Rs. {totalRevenue}</p>
           </CardContent>
         </Card>
 
@@ -54,7 +54,7 @@ export default async function Home() {
 
       <Card className="mt-10">
         <CardHeader>
-          <CardTitle>Sales Chart ($)</CardTitle>
+          <CardTitle>Sales Chart (Rs)</CardTitle>
         </CardHeader>
         <CardContent>
           <SalesChart data={graphData} />

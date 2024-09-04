@@ -12,7 +12,10 @@ const LeftSideBar = () => {
 
   return (
     <div className="h-screen left-0 top-0 sticky p-10 flex flex-col gap-16 bg-orange-50 shadow-xl max-lg:hidden">
-      <Image src="/logo.png" alt="logo" width={150} height={70} />
+      <Link href={'/dashboard'} className="flex flex-row items-center justify-center">
+      <Image src="/logo.png" alt="logo" width={45} height={45} />
+      <Image src="/logoname.png" alt="logoname" width={130} height={45} />
+      </Link>
 
       <div className="flex flex-col gap-12">
         {navLinks.map((link) => (
