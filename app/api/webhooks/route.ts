@@ -26,12 +26,15 @@ export const POST = async (req: NextRequest) => {
       }
 
       const shippingAddress = {
-        street: session?.shipping_details?.address?.line1,
+        line1: session?.shipping_details?.address?.line1,
+        line2: session?.shipping_details?.address?.line2?session?.shipping_details?.address?.line2:"",
         city: session?.shipping_details?.address?.city,
         state: session?.shipping_details?.address?.state,
         postalCode: session?.shipping_details?.address?.postal_code,
         country: session?.shipping_details?.address?.country,
+        phone: session?.shipping_details?.phone
       }
+      console.log("🚀 ~ POST ~ shippingAddress:", session?.shipping_details)
 
       const retrieveSession = await stripe.checkout.sessions.retrieve(
         session.id,
