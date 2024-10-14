@@ -22,30 +22,30 @@ export default async function Home() {
       <Separator className="bg-grey-1 my-5" />
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-10">
-        <Card>
+        <Card className="bg-green-600 bg-opacity-20">
           <CardHeader className="flex flex-row justify-between items-center">
             <CardTitle>Total Revenue</CardTitle>
-            <CircleDollarSign className="max-sm:hidden" />
+            <CircleDollarSign size={30} className="max-sm:hidden text-green-800 " />
           </CardHeader>
           <CardContent>
             <p className="text-body-bold">Rs. {numberWithCommas(totalRevenue)}</p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-blue-600 bg-opacity-20">
           <CardHeader className="flex flex-row justify-between items-center">
             <CardTitle>Total Orders</CardTitle>
-            <ShoppingBag className="max-sm:hidden" />
+            <ShoppingBag  size={30} className="max-sm:hidden text-blue-800 " />
           </CardHeader>
           <CardContent>
             <p className="text-body-bold">{totalOrders}</p>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-orange-600 bg-opacity-20">
           <CardHeader className="flex flex-row justify-between items-center">
             <CardTitle>Total Customer</CardTitle>
-            <UserRound className="max-sm:hidden" />
+            <UserRound size={30} className="max-sm:hidden text-orange-800" />
           </CardHeader>
           <CardContent>
             <p className="text-body-bold">{totalCustomers}</p>
