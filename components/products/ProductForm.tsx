@@ -35,7 +35,7 @@ const formSchema = z.object({
   sizes: z.array(z.string()),
   colors: z.array(z.string()),
   price: z.coerce.number().min(0.1),
-  expense: z.coerce.number().min(0.1),
+  discount: z.coerce.number(),
 });
 
 interface ProductFormProps {
@@ -85,7 +85,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ initialData }) => {
           sizes: [],
           colors: [],
           price: 0.1,
-          expense: 0.1,
+          discount: 0,
         },
   });
 
@@ -199,7 +199,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ initialData }) => {
               name="price"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Price ($)</FormLabel>
+                  <FormLabel>Price (Rs)</FormLabel>
                   <FormControl>
                     <Input
                       type="number"
@@ -214,14 +214,14 @@ const ProductForm: React.FC<ProductFormProps> = ({ initialData }) => {
             />
             <FormField
               control={form.control}
-              name="expense"
+              name="discount"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Expense ($)</FormLabel>
+                  <FormLabel>Discount (Rs)</FormLabel>
                   <FormControl>
                     <Input
                       type="number"
-                      placeholder="Expense"
+                      placeholder="discount"
                       {...field}
                       onKeyDown={handleKeyPress}
                     />

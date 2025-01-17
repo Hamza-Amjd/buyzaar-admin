@@ -17,7 +17,7 @@ type ProductType = {
   sizes: [string];
   colors: [string];
   price: number;
-  expense: number;
+  discount: number;
   createdAt: Date;
   updatedAt: Date;
 }
